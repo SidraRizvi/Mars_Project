@@ -1,28 +1,22 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace Mars_Pro1.Steps
 {
-   [Binding]
-    class Loginsuccesfulsteps
+    [Binding]
+    class LoginSuccessfulsteps
     {
         [Given(@"Seller is on the Homepage and has registered himself")]
         public void GivenSellerIsOnTheHomepageAndHasRegisteredHimself()
         {
-            
-        }
+                    }
 
         [When(@"He enters his correct (.*) and (.*)")]
         public void WhenHeEntersHisCorrectAnd(string p0, string p1, Table table)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-
-        [When(@"He enters his correct emailaddres and password")]
-        public void WhenHeEntersHisCorrectEmailaddresAndPassword(Table table)
         {
             
         }
@@ -43,9 +37,9 @@ namespace Mars_Pro1.Steps
         public void ThenValidatesHisNameOnHisProfilePage()
         {
            
+
+
         }
-
-
 
     }
 }

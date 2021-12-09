@@ -20,23 +20,22 @@ namespace Mars_Pro1.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SignIn")]
-    public partial class SignInFeature
+    [NUnit.Framework.DescriptionAttribute("Seller_Profile")]
+    public partial class Seller_ProfileFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Login.feature"
+#line 1 "Seller_Profile.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SignIn", "In order to add profile details\r\nAs a registered member\r\nSeller has to login with" +
-                    " correct credentials", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Seller_Profile", "\tSeller wants to add some skills to his profile ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,15 +74,19 @@ namespace Mars_Pro1.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("SignIn Link Exists")]
+        [NUnit.Framework.DescriptionAttribute("Seller wants to add skills")]
         [NUnit.Framework.CategoryAttribute("Home")]
-        public virtual void SignInLinkExists()
+        [NUnit.Framework.CategoryAttribute("SignIn")]
+        [NUnit.Framework.CategoryAttribute("Profile")]
+        public virtual void SellerWantsToAddSkills()
         {
             string[] tagsOfScenario = new string[] {
-                    "Home"};
+                    "Home",
+                    "SignIn",
+                    "Profile"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SignIn Link Exists", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller wants to add skills", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -103,31 +106,30 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 6
+ testRunner.Given("the user has signed in succesfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 7
+ testRunner.And("On Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 8
-    testRunner.Given("Seller has navigated to Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("user click on Skills Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
-    testRunner.When("the Mars Project Homepage loads", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
-    testRunner.Then("SignIn link appears on the Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("directed to the Skills Dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login with correct credentials")]
-        [NUnit.Framework.CategoryAttribute("Home")]
-        [NUnit.Framework.CategoryAttribute("SignIn")]
-        public virtual void LoginWithCorrectCredentials()
+        [NUnit.Framework.DescriptionAttribute("Seller Adding skills details to his profile")]
+        public virtual void SellerAddingSkillsDetailsToHisProfile()
         {
-            string[] tagsOfScenario = new string[] {
-                    "Home",
-                    "SignIn"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with correct credentials", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller Adding skills details to his profile", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -147,46 +149,73 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 13
+testRunner.Given("the user is on Skills tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 14
+testRunner.When("He provides <Skill description> <Skill level> details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 15
- testRunner.Given("Seller is on the Homepage and has registered himself", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.And("Clicks Add New Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "field",
-                            "value"});
-                table1.AddRow(new string[] {
-                            "Emailaddress",
-                            "sidra_riz@yahoo.com"});
-                table1.AddRow(new string[] {
-                            "password",
-                            "sid6638659"});
 #line 16
- testRunner.When("He enters his correct <emailaddress> and <password>", ((string)(null)), table1, "When ");
+testRunner.Then("Message box should be popped up saying the skill has been added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 17
+testRunner.And("Added skill should be reflected on the Skill tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Seller wants to cancel the Add Skill request")]
+        public virtual void SellerWantsToCancelTheAddSkillRequest()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller wants to cancel the Add Skill request", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 19
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 20
- testRunner.And("Clicks on the Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("the user is on Add Skill page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 21
- testRunner.Then("Redirects seller to his profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("User clicks the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 22
-    testRunner.And("Validates his name on his profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("Redirects the user to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Seller Ticks the Rememberme Check box to save his credentials details for future")]
-        [NUnit.Framework.CategoryAttribute("Home")]
-        [NUnit.Framework.CategoryAttribute("SignIn")]
-        public virtual void SellerTicksTheRemembermeCheckBoxToSaveHisCredentialsDetailsForFuture()
+        [NUnit.Framework.DescriptionAttribute("Seller wants to update his skill")]
+        public virtual void SellerWantsToUpdateHisSkill()
         {
-            string[] tagsOfScenario = new string[] {
-                    "Home",
-                    "SignIn"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller Ticks the Rememberme Check box to save his credentials details for future", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 25
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller wants to update his skill", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -206,47 +235,33 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 25
+testRunner.Given("User is on the Skill tab on his Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 26
-    testRunner.Given("Seller has entered the correct credentials and wants to save them.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.When("User Clicks the Edit Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 27
-    testRunner.When("He checks the Remember me? check box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("He Enters the updated <Skill> OR <Level>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
-    testRunner.And("Click on SignIn button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("Clicks the Update Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
-    testRunner.Then("verify the user credentials are showingup on next SignIn.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Profile details should be updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Unsuccessful login on entering incorrect credentials")]
-        [NUnit.Framework.CategoryAttribute("Home")]
-        [NUnit.Framework.CategoryAttribute("SignIn")]
-        [NUnit.Framework.TestCaseAttribute("sidra_riz@yahoo.com", "123456", null)]
-        [NUnit.Framework.TestCaseAttribute("sidra_riz@yahoo.com", "67*5#sdd", null)]
-        [NUnit.Framework.TestCaseAttribute("adc_123@gmail.com", "sid6638659", null)]
-        [NUnit.Framework.TestCaseAttribute("sidra_riz@yahoo.com", "", null)]
-        [NUnit.Framework.TestCaseAttribute("", "", null)]
-        [NUnit.Framework.TestCaseAttribute("", "sid6638659", null)]
-        public virtual void UnsuccessfulLoginOnEnteringIncorrectCredentials(string emailaddress, string password, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Seller wants to delete his skill")]
+        public virtual void SellerWantsToDeleteHisSkill()
         {
-            string[] @__tags = new string[] {
-                    "Home",
-                    "SignIn"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("emailaddress", emailaddress);
-            argumentsOfScenario.Add("password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unsuccessful login on entering incorrect credentials", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 33
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller wants to delete his skill", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 31
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -266,71 +281,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 33
+testRunner.Given("User is on the Skill tab on his Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 34
-    testRunner.Given(string.Format("Seller enters {0} and {1} into the application", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.When("User Clicks the Delete Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
-    testRunner.When("He clicks the Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 36
-    testRunner.Then("He should be informed that login is unsuccessful by a error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User want to Create Account to Join.")]
-        [NUnit.Framework.CategoryAttribute("Home")]
-        [NUnit.Framework.CategoryAttribute("Join")]
-        public virtual void UserWantToCreateAccountToJoin_()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Home",
-                    "Join"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User want to Create Account to Join.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 48
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 50
-   testRunner.Given("User is on Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 51
-   testRunner.And("He has clicked the Join link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 52
-   testRunner.When("He completes the form with <firstname> <lastName> <emailaddress> <password> and <" +
-                        "confirmpassword>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 53
-   testRunner.And("checked the Terms and conditions box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 54
-   testRunner.And("He clicks the Join button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 55
-   testRunner.Then("User should be sucessfully registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 56
-   testRunner.And("Directed to the Profile page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("Selected Skill should be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

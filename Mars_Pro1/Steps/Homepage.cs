@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TechTalk.SpecFlow;
@@ -8,6 +10,8 @@ namespace Mars_Pro1.Steps
 [Binding]
     class Homepage
     {
+      
+
         [Given(@"Seller has navigated to Homepage")]
         public void GivenSellerHasNavigatedToHomepage()
         {

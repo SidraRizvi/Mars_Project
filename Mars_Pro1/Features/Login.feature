@@ -12,7 +12,7 @@ Scenario: SignIn Link Exists
 
 @Home@SignIn
 Scenario: Login with correct credentials
-	Given Seller is on Homepage and has registered himself
+	Given Seller is on the Homepage and has registered himself
 	When He enters his correct <emailaddress> and <password>
 	| field        | value               |
 	| Emailaddress | sidra_riz@yahoo.com |
@@ -20,6 +20,14 @@ Scenario: Login with correct credentials
 	And Clicks on the Login Button
 	Then Redirects seller to his profile page
     And Validates his name on his profile page
+
+@Home@SignIn
+Scenario: Seller Ticks the Rememberme Check box to save his credentials details for future
+    Given Seller has entered the correct credentials and wants to save them.
+    When He checks the Remember me? check box
+    And Click on SignIn button
+    Then verify the user credentials are showingup on next SignIn.
+
 
 @Home@SignIn
 Scenario: Unsuccessful login on entering incorrect credentials
