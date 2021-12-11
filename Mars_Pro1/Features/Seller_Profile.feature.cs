@@ -124,10 +124,34 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Seller Adding skills details to his profile")]
-        public virtual void SellerAddingSkillsDetailsToHisProfile()
+        [NUnit.Framework.CategoryAttribute("Home")]
+        [NUnit.Framework.CategoryAttribute("Profile")]
+        [NUnit.Framework.CategoryAttribute("Skill")]
+        [NUnit.Framework.CategoryAttribute("AddNewSkill")]
+        [NUnit.Framework.TestCaseAttribute("", "", "Please enter skill and experience level", null)]
+        [NUnit.Framework.TestCaseAttribute("Video & Animation", "", "Please enter skill and experience level", null)]
+        [NUnit.Framework.TestCaseAttribute("", "Exert", "Please enter skill and experience level", null)]
+        [NUnit.Framework.TestCaseAttribute("Graphic Design", "Beginners", "Graphic Deign has been added to your skills", null)]
+        [NUnit.Framework.TestCaseAttribute("Digital Marketing", "Beginners", "Digital Marketing has been added to your skills", null)]
+        [NUnit.Framework.TestCaseAttribute("Graphic Design", "Beginners", "This skill already exist in your skill list", null)]
+        [NUnit.Framework.TestCaseAttribute("Graphic Design", "Intermediate", "Duplicated Data", null)]
+        [NUnit.Framework.TestCaseAttribute("Graphic Design", "Expert", "Duplicated Data", null)]
+        public virtual void SellerAddingSkillsDetailsToHisProfile(string skill, string level, string messageBox, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] @__tags = new string[] {
+                    "Home",
+                    "Profile",
+                    "Skill",
+                    "AddNewSkill"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Skill", skill);
+            argumentsOfScenario.Add("Level", level);
+            argumentsOfScenario.Add("Message box", messageBox);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller Adding skills details to his profile", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
@@ -150,19 +174,25 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 13
-testRunner.Given("the user is on Skills tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User selects Edit > New Skill from the Skill Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
-testRunner.When("He provides <Skill description> <Skill level> details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("The Skill New form is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-testRunner.And("Clicks Add New Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When(string.Format("He enters {0} in the text box and selects any {1} from dropdown List", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
-testRunner.Then("Message box should be popped up saying the skill has been added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("Clicks Add Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
-testRunner.And("Added skill should be reflected on the Skill tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Then(string.Format("{0} should be popped", messageBox), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 18
+  testRunner.And("AddNew Button should be visible for adding another skill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+  testRunner.And("Update Button should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -170,12 +200,20 @@ testRunner.And("Added skill should be reflected on the Skill tab", ((string)(nul
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Seller wants to cancel the Add Skill request")]
+        [NUnit.Framework.CategoryAttribute("Home")]
+        [NUnit.Framework.CategoryAttribute("Profile")]
+        [NUnit.Framework.CategoryAttribute("SkillTab")]
+        [NUnit.Framework.CategoryAttribute("CancelSkill")]
         public virtual void SellerWantsToCancelTheAddSkillRequest()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "Home",
+                    "Profile",
+                    "SkillTab",
+                    "CancelSkill"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller wants to cancel the Add Skill request", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 19
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -195,14 +233,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 20
-testRunner.Given("the user is on Add Skill page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 35
+testRunner.Given("the user is on Add New Skill page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 21
+#line 36
 testRunner.When("User clicks the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
-testRunner.Then("Redirects the user to Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 37
+testRunner.Then("Redirects the user to Skill tab on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -210,12 +248,20 @@ testRunner.Then("Redirects the user to Profile page", ((string)(null)), ((TechTa
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Seller wants to update his skill")]
+        [NUnit.Framework.CategoryAttribute("ome")]
+        [NUnit.Framework.CategoryAttribute("Profile")]
+        [NUnit.Framework.CategoryAttribute("SkillTab")]
+        [NUnit.Framework.CategoryAttribute("EditSkill")]
         public virtual void SellerWantsToUpdateHisSkill()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "ome",
+                    "Profile",
+                    "SkillTab",
+                    "EditSkill"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller wants to update his skill", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -235,20 +281,27 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
+#line 41
 testRunner.Given("User is on the Skill tab on his Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 26
+#line 42
 testRunner.When("User Clicks the Edit Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 43
 testRunner.And("He Enters the updated <Skill> OR <Level>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 44
 testRunner.And("Clicks the Update Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 45
 testRunner.Then("Profile details should be updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 46
+testRunner.And("Message box should be displayed saying the skill has been updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 47
+testRunner.But("\"This skill is already added to your skill list\" Msg box should be displayed on e" +
+                        "ntering same skill with same level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -256,12 +309,20 @@ testRunner.Then("Profile details should be updated", ((string)(null)), ((TechTal
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Seller wants to delete his skill")]
+        [NUnit.Framework.CategoryAttribute("Home")]
+        [NUnit.Framework.CategoryAttribute("Profile")]
+        [NUnit.Framework.CategoryAttribute("SkillTab")]
+        [NUnit.Framework.CategoryAttribute("DeleteSkill")]
         public virtual void SellerWantsToDeleteHisSkill()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "Home",
+                    "Profile",
+                    "SkillTab",
+                    "DeleteSkill"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller wants to delete his skill", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 31
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -281,14 +342,72 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 33
+#line 52
 testRunner.Given("User is on the Skill tab on his Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 34
+#line 53
 testRunner.When("User Clicks the Delete Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 54
 testRunner.Then("Selected Skill should be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 55
+testRunner.And("Message box should be popped up saying the skill has been deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Seller should be able to view all added skills on his Profile page")]
+        [NUnit.Framework.CategoryAttribute("Home")]
+        [NUnit.Framework.CategoryAttribute("Profile")]
+        [NUnit.Framework.CategoryAttribute("SkillTab")]
+        public virtual void SellerShouldBeAbleToViewAllAddedSkillsOnHisProfilePage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Home",
+                    "Profile",
+                    "SkillTab"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Seller should be able to view all added skills on his Profile page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 58
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 60
+testRunner.Given("User is on his Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 61
+testRunner.And("Language Description form is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 62
+testRunner.When("User Clicks on Sills Tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 63
+testRunner.Then("All his added Skills should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 64
+testRunner.And("Addnew Button should be  available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 65
+testRunner.And("Edit/Delete Icons should be available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
