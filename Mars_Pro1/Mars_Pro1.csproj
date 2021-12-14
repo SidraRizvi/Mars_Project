@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
-    <Folder Include="Steps\" />
+    <Folder Include="Page\" />
     <Folder Include="TestData\" />
   </ItemGroup>
 
