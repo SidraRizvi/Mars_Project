@@ -126,26 +126,18 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("When I enter correct credentials to SignIn I should be able to access")]
+        [NUnit.Framework.DescriptionAttribute("When I enter correct credentials I should be successfully loginIn")]
         [NUnit.Framework.CategoryAttribute("Home")]
         [NUnit.Framework.CategoryAttribute("SignIn")]
-        [NUnit.Framework.TestCaseAttribute("sidra_riz@yahoo.com", "sid6638659", "Sidra", null)]
-        [NUnit.Framework.TestCaseAttribute("riz.sidra@gmail.com", "askshr5710", "Sid", null)]
-        public virtual void WhenIEnterCorrectCredentialsToSignInIShouldBeAbleToAccess(string emailaddress, string password, string firstname, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("Autoamte")]
+        public virtual void WhenIEnterCorrectCredentialsIShouldBeSuccessfullyLoginIn()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Home",
-                    "SignIn"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+                    "SignIn",
+                    "Autoamte"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("emailaddress", emailaddress);
-            argumentsOfScenario.Add("password", password);
-            argumentsOfScenario.Add("firstname", firstname);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I enter correct credentials to SignIn I should be able to access", "my Profile page", tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I enter correct credentials I should be successfully loginIn", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -166,20 +158,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 17
+ testRunner.Given("I am on the SignIn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 18
- testRunner.Given("I am on the Homepage and already have an account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("I enter \"sidra_riz@yahoo.com\" in username and \"sid6638659\" in password field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
- testRunner.When(string.Format("I enter my {0} and {1}", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I Click on Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
- testRunner.And("Clicks on Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 21
- testRunner.Then("Redirects me to my Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 22
-    testRunner.And(string.Format("Then I should see the message \"Welcome\", {0}", firstname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Then("I should successfully login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -198,7 +187,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I checks the RememberMe Checkbox my credentials details should be saved for " +
                     "future", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -218,16 +207,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 31
+#line 26
     testRunner.Given("I entered the correct credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 32
+#line 27
     testRunner.When("I check the Remember me? Checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 28
     testRunner.And("Click on SignIn button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 34
+#line 29
     testRunner.Then("Verify my credentials are showingup on next SignIn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -263,7 +252,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("password", password);
             argumentsOfScenario.Add("error mesage", errorMesage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I enter Incorrect Credentials an error message should be displayed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 37
+#line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -283,13 +272,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 38
+#line 33
     testRunner.Given(string.Format("I enter {0} and {1} into the application", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 39
+#line 34
     testRunner.When("I click the Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 40
+#line 35
     testRunner.Then("I should be informed that login is unsuccessful by an <error message>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -337,7 +326,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("confirmpassword", confirmpassword);
             argumentsOfScenario.Add("message", message);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("On filling my details on Joining form my new account should be created", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 56
+#line 51
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -357,22 +346,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 58
+#line 53
    testRunner.Given("I am on Join page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 59
+#line 54
    testRunner.When(string.Format("I complete the form with {0} {1} {2} {3} and {4} details", firstname, lastname, emailaddress, password, confirmpassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 60
+#line 55
    testRunner.And("Check the Terms and conditions box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 61
+#line 56
    testRunner.And("I Clicks the Join button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 62
+#line 57
    testRunner.Then(string.Format("{0} should be displaed", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 63
+#line 58
    testRunner.And("Directed to the Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -394,7 +383,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I am on Join page and want to SignIn instead of creating an account then Sig" +
                     "nIn page should be available.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 89
+#line 84
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -414,16 +403,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 91
+#line 86
    testRunner.Given("I am on Join page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 92
+#line 87
    testRunner.And("SignIn link is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 93
+#line 88
    testRunner.When("I Click on SignIn link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 94
+#line 89
    testRunner.Then("Directs me to the SignIn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -443,7 +432,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I forget my password then Forgot password Link should be available to reset " +
                     "it", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 97
+#line 92
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -463,25 +452,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 99
+#line 94
     testRunner.Given("I Click on Forgot password link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 100
+#line 95
     testRunner.And("Email Verification page is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 101
+#line 96
     testRunner.When("I enter the valid email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 102
+#line 97
     testRunner.And("Click on Send Verification Email button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 103
+#line 98
     testRunner.Then("password reset email should be sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 104
+#line 99
     testRunner.And("\"Email has been sent\" message should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 105
+#line 100
     testRunner.And("Verify Email is delivered to the correct email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -503,7 +492,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I am on Forgot password page I should be directed to Signin page on recallin" +
                     "g password.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 108
+#line 103
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -523,13 +512,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 110
+#line 105
     testRunner.Given("I am on Forgot password link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 111
+#line 106
     testRunner.When("I Click Remember your password link?", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 112
+#line 107
     testRunner.Then("I should be directed to SignIn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -549,7 +538,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Signout"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I click on Signout I should be Successfully Signout from the application", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 115
+#line 110
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -569,16 +558,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 116
+#line 111
  testRunner.Given("I am on Profile Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 117
+#line 112
     testRunner.And("SignOut page is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 118
+#line 113
     testRunner.When("I Click SignOut Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 119
+#line 114
  testRunner.Then("I should be Signout successfully from the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -610,7 +599,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("version", version);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should be getting the same view on accessing Mars from different versions of Ch" +
                     "rome browser", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 122
+#line 117
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -630,16 +619,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 124
+#line 119
      testRunner.Given("I have installed the correct chrome browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 125
+#line 120
      testRunner.When(string.Format("I enter Home URL in chrome browser of {0}", version), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 126
+#line 121
      testRunner.And("Presses the Enter Key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 127
+#line 122
      testRunner.Then("The Login feature should work the same way in all web version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -659,7 +648,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "PerformanceTesting"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I enter URl, the Login screen should be loaded within the defined time", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 137
+#line 132
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -679,13 +668,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 139
+#line 134
     testRunner.Given("I have installed correct browser version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 140
+#line 135
     testRunner.When("I enter the Home URL and presses Enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 141
+#line 136
     testRunner.Then("Home Page should be loaded within standard time of 5-10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -707,7 +696,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I Sign In from my Mobile/Desktop/Tablet, application should work properly in" +
                     " differen platforms", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 144
+#line 139
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -727,13 +716,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 146
+#line 141
  testRunner.Given("User has installed correct browser version and other prerequist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 147
+#line 142
  testRunner.When("User is Logging in from different platforms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 148
+#line 143
  testRunner.Then("Login functionality should work properly the same", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

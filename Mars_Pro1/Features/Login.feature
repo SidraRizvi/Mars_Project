@@ -11,20 +11,15 @@ Scenario: I want to access Mars website
     Then Homepage should be displayed
     And Sign In link should appear on the Homepage
     And Join Button should appear on the Homepage
-
-@Home@SignIn
-Scenario Outline: When I enter correct credentials to SignIn I should be able to access 
-my Profile page
-	Given I am on the Homepage and already have an account
-	When I enter my <emailaddress> and <password>
-	And Clicks on Login Button
-	Then Redirects me to my Profile page
-    And Then I should see the message "Welcome", <firstname>
-    Examples: 
-    | emailaddress        | password   | firstname |
-    | sidra_riz@yahoo.com | sid6638659 |  Sidra    |
-    | riz.sidra@gmail.com | askshr5710 |  Sid      |
-
+    
+@Home@SignIn@Autoamte
+Scenario: When I enter correct credentials I should be successfully loginIn
+	Given I am on the SignIn page
+	When I enter "sidra_riz@yahoo.com" in username and "sid6638659" in password field
+	And I Click on Login Button
+    Then I should successfully login 
+	
+   
 @Home@SignIn
 Scenario: When I checks the RememberMe Checkbox my credentials details should be saved for future
    

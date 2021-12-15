@@ -11,18 +11,27 @@ namespace Mars_Pro1.Hooks
     [Binding]
     public sealed class WebHooks
     {
+           
         
+
+       
 
         [BeforeScenario]
         public void BeforeScenario()
-        {
-         
+        {  
+           IWebDriver Driver;
+           Driver = new ChromeDriver();
+            //helpul during debugging - 
+                     
+            Driver.Manage().Window.Maximize();
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-          
+           // IWebDriver Driver;
+           // Driver.Quit();
         }
+
     }
 }
